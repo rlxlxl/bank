@@ -74,8 +74,7 @@ public:
         return;
     }
 
-    void addBalance() {
-        int amount;
+    void addBalance(int amount) {
         cout << "Введите сумму для пополнения: ";
         cin >> amount;
         balance += amount;
@@ -83,8 +82,7 @@ public:
         return;
     }
     
-    void withdrawBalance() {
-        int amount;
+    void withdrawBalance(int amount) {
         cout << "Введите сумму для снятия: ";
         cin >> amount;
         if (balance >= amount) {
@@ -96,8 +94,13 @@ public:
         return;
     }
 
-    void getBalance() {
-        cout << "Баланс: " << balance << endl;
-        return;
+    int getBalance() {
+        return balance;
+    }
+
+    void tranferUser() {
+        string transferEmail;
+        cout << "Введите почту пользователя: ";
+        cin >> transferEmail;
     }
 };
