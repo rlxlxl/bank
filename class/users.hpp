@@ -9,6 +9,7 @@ protected:
     string firstName = "default";
     string lastName = "default";
     string email = "default";
+    int balance = 0;
 
 public:
     User (string pass, string fn, string ln, string em) :
@@ -70,6 +71,33 @@ public:
         cin >> newEmail;
         email = newEmail;
         cout << "Email успешно изменен" << endl;
+        return;
+    }
+
+    void addBalance() {
+        int amount;
+        cout << "Введите сумму для пополнения: ";
+        cin >> amount;
+        balance += amount;
+        cout << "Баланс успешно пополнен" << endl;
+        return;
+    }
+    
+    void withdrawBalance() {
+        int amount;
+        cout << "Введите сумму для снятия: ";
+        cin >> amount;
+        if (balance >= amount) {
+            balance -= amount;
+            cout << "Успешно выведено " << amount << " валюты." << endl;
+        } else {
+            cout << "Недостаточно средств" << endl;
+        }
+        return;
+    }
+
+    void getBalance() {
+        cout << "Баланс: " << balance << endl;
         return;
     }
 };
